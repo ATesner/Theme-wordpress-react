@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom'
+import { HashRouter, Route, Switch, Redirect } from 'react-router-dom'
 import { AppContainer } from 'react-hot-loader'
 import Navigation from './components/navigation'
 import Home from './components/home'
@@ -14,7 +14,7 @@ const renderApp = () => {
 
     ReactDOM.render(
         <AppContainer>
-            <BrowserRouter>
+            <HashRouter>
                 <div>
                     <header>
                         <Navigation />
@@ -29,7 +29,7 @@ const renderApp = () => {
                         </Switch>
                     </main>
                 </div>
-            </BrowserRouter>
+            </HashRouter>
         </AppContainer>,
         document.getElementById('app')
     )
