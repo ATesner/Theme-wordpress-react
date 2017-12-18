@@ -8,8 +8,8 @@ import Article from './components/article'
 import Project from './components/project'
 import Contact from './components/contact'
 import './scss/style.scss'
-//https://medium.freecodecamp.org/how-to-build-react-apps-on-top-of-the-wordpress-rest-api-bcc632808025
-//https://medium.com/@thejasonfile/fetch-vs-axios-js-for-making-http-requests-2b261cdd3af5
+//https://stanko.github.io/webpack-babel-react-revisited/
+//https://medium.com/@srinisoundar/setting-up-environment-for-react-sass-es2015-babel-with-webpack-2f77445129
 const renderApp = () => {
 
     ReactDOM.render(
@@ -25,7 +25,7 @@ const renderApp = () => {
                             <Route path="/project" component={ Project } />
                             <Route path="/article" component={ Article } />
                             <Route path="/contact" component={ Contact } />
-                            <Route render={ () => { return <Redirect to="/" /> }} />
+                            {/* <Route render={ () => { return <Redirect to="/" /> }} /> */}
                         </Switch>
                     </main>
                 </div>

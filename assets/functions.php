@@ -1,0 +1,12 @@
+<?php
+
+function scriptsAndStyles() {
+    wp_enqueue_style('mytheme-style', get_theme_file_uri("style.css"));
+    wp_enqueue_style('bootstrap', "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css");
+    wp_enqueue_script('jquery', "https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.js");
+    wp_enqueue_script('mytheme-scripts', get_template_directory_uri() . '/main.js', array(), false, true);
+
+}
+add_action('wp_enqueue_scripts', 'scriptsAndStyles');
+
+?>

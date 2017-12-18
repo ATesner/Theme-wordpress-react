@@ -18,14 +18,6 @@ let config = {
                 test: /\.(js|jsx)$/,
                 loader: ['react-hot-loader/webpack', 'babel-loader']
             },
-            {
-                test: /\.scss$/,
-                exclude: /node_modules/,
-                use: ExtractTextPlugin.extract({
-                    fallback: 'style-loader',
-                    use: [ 'css-loader', 'sass-loader' ]
-                } )
-            },
         ]
     },
     plugins: [
@@ -34,7 +26,7 @@ let config = {
         }),
         new ExtractTextPlugin( {
             disable: false,
-            filename: 'style.bundle.css',
+            filename: 'style.css',
             allChunks: true
         }),
     ]
@@ -51,7 +43,24 @@ if(process.env.NODE_ENV === 'production') {
     config.plugins.push(
         new webpack.optimize.OccurrenceOrderPlugin()
     )
+    config.module.loaders.push(
+        {
+            test: /\.scss$/,
+            exclude: /node_modules/,
+            loader: ExtractTextPlugin.extract({
+                fallback: 'style-loader',
+                use: [ 'css-loader', 'sass-loader' ]
+            } )
+        }
+    )
 }else{
+    config.module.loaders.push(
+        {
+            test: /\.scss$/,
+            exclude: /node_modules/,
+            loader: [ 'style-loader','css-loader', 'sass-loader' ]
+        }
+    )
     config.entry = ['react-hot-loader/patch', config.entry ]
 }
 
