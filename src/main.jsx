@@ -5,6 +5,7 @@ import { AppContainer } from 'react-hot-loader'
 import Navigation from './components/navigation'
 import Home from './components/home'
 import Article from './components/article'
+import articleView from './components/articleView'
 import Project from './components/project'
 import Contact from './components/contact'
 import './scss/style.scss'
@@ -23,7 +24,8 @@ const renderApp = () => {
                         <Switch>
                             <Route path="/" component={ Home } exact />
                             <Route path="/project" component={ Project } />
-                            <Route path="/article" component={ Article } />
+                            <Route path="/article" component={ Article } exact />
+                            <Route path="/article/:id" component={ articleView } />
                             <Route path="/contact" component={ Contact } />
                             <Route render={ () => { return <Redirect to="/" /> }} />
                         </Switch>

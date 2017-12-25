@@ -25,6 +25,10 @@ class Http {
         return this.get( '/categories?slug=' + slug)
     }
 
+    getPost(postId) {
+        return this.get('/posts/' + postId)
+    }
+
     get(url){
         return new Promise((resolve, reject) => {
             axios.get(this.backUrl + url)
