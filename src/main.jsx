@@ -25,7 +25,7 @@ const renderApp = () => {
                             <Route path="/project" component={ Project } />
                             <Route path="/article" component={ Article } />
                             <Route path="/contact" component={ Contact } />
-                            {/* <Route render={ () => { return <Redirect to="/" /> }} /> */}
+                            <Route render={ () => { return <Redirect to="/" /> }} />
                         </Switch>
                     </main>
                 </div>
