@@ -5,7 +5,7 @@ html {
         margin: 0 !important;
         padding: 0 !important;
         background-image: url('https://images.pexels.com/photos/78791/railway-bernina-railway-lagalb-bernina-78791.jpeg?w=940&h=650&auto=compress&cs=tinysrgb');
-        background-size: 100% 100%;
+        background-size: 100% 100vh;
         background-attachment: fixed;
     }
 }
@@ -55,10 +55,6 @@ html {
     height: 250px;
 }
 
-.navigation {
-    background-color: darkgray;
-    border-bottom: 1px solid black;
-    a {
-        color: darkred;
-    }
+.article-view-container {
+    background-color: white;
 }

@@ -40,7 +40,9 @@ class Home extends Component {
                                     { post.better_featured_image ? 
                                         <img className="img-item" src={post.better_featured_image.source_url} /> : null
                                     }
-                                    <h4 className="title-item" >{ post.title.rendered }</h4>
+                                    <a href={"#/article/" + post.id} >
+                                        <h4 className="title-item" >{ post.title.rendered }</h4>
+                                    </a>
                                     <div dangerouslySetInnerHTML={{ __html: post.excerpt.rendered }} /> 
                                 </div>
                             )

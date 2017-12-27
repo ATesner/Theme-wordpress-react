@@ -3,21 +3,36 @@ import http from '../helper';
 
 class ArticleView extends Component {
 
+    constructor(props) {
+        super(props);
+        
+        this.state =  {
+            post: null
+        }
+    }
+    
     componentWillMount() {
 
         http.getPost(this.props.match.params.id).then(post => {
             console.log('ArticleView', post)
+            this.setState({ post })
         })
     }
 
     render() {
-        console.log('VIEW')
-        console.log('Props ArticleView', this.props)
-        return (
-            <div>
-                
-            </div>
-        );
+
+        if(this.state.post != null){
+
+            return (
+                <div className="article-view-container">
+                   <div dangerouslySetInnerHTML={{ __html: this.state.post.content.rendered }} /> 
+                </div>
+            );
+        }else{
+            return (
+                <div>Chargement de l'article</div>
+            )
+        }
     }
 }
 
