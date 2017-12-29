@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Grid from './grid';
 import http from '../helper';
 
 class Project extends Component {
@@ -22,14 +23,8 @@ class Project extends Component {
 
     render() {
         return (
-            <div>
-                {
-                    this.state.projets.map((projet, index) => {
-                        return (
-                            <div key={index}>{projet.title.rendered}</div>
-                        )
-                    })
-                }
+            <div className="page-container">
+                <Grid posts={this.state.projets} />
             </div>
         );
     }

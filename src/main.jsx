@@ -16,7 +16,7 @@ const renderApp = () => {
     ReactDOM.render(
         <AppContainer>
             <HashRouter>
-                <div>
+                <div className="app-container">
                     <header>
                         <Navigation />
                     </header>

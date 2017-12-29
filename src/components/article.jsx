@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
+import Grid from './grid';
 import http from '../helper';
-require( '../scss/style.scss');
 
 class Article extends Component {
 
@@ -23,14 +23,8 @@ class Article extends Component {
 
     render() {
         return (
-            <div>
-                {
-                    this.state.articles.map((article, index) => {
-                        return (
-                            <div key={index}><p>{ article.title.rendered}</p></div>
-                        )
-                    })
-                }
+            <div className="page-container">
+                <Grid posts={this.state.articles} />
             </div>
         );
     }

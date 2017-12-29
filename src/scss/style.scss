@@ -1,13 +1,27 @@
 html {
-    margin: 0 !important;
-    padding: 0 !important;
-    body {
-        margin: 0 !important;
-        padding: 0 !important;
-        background-image: url('https://images.pexels.com/photos/78791/railway-bernina-railway-lagalb-bernina-78791.jpeg?w=940&h=650&auto=compress&cs=tinysrgb');
-        background-size: 100% 100vh;
-        background-attachment: fixed;
-    }
+    // margin: 0 !important;
+    // padding: 0 !important;
+    // // body, .app-container, header {
+    // //     margin: 0 !important;
+    // //     padding: 0 !important;
+
+    // // }
+}
+
+.navbar-brand img {
+    width: auto;
+    height: 100%;
+}
+
+.home-container {
+    margin-top: 0;
+    background-image: url('https://images.pexels.com/photos/78791/railway-bernina-railway-lagalb-bernina-78791.jpeg?w=940&h=650&auto=compress&cs=tinysrgb');
+    background-size: 100% 100vh;
+    background-attachment: fixed;
+}
+
+.page-container {
+    margin-top: 75px;
 }
 
 .home-last-article {
@@ -23,9 +37,14 @@ html {
 
 .home-spitch {
     height: 100vh;
+    p {
+        text-align: center;
+
+        vertical-align: middle;
+    }
 }
 
-.box {
+.grid {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
@@ -42,18 +61,34 @@ html {
     box-shadow: 1px 1px 1px 2px #656565;
     filter:progid:DXImageTransform.Microsoft.Shadow(color=#656565, Direction=134, Strength=1);
     text-align: center;
-    background-color: whitesmoke;
+    background-color: white;
+
+    &:hover {
+        background-color: whitesmoke;
+        -moz-box-shadow: 2px 2px 2px 2px #656565;
+        -webkit-box-shadow: 2px 2px 2px 2px #656565;
+        -o-box-shadow: 2px 2px 2px 2px #656565;
+        box-shadow: 2px 2px 2px 2px #656565;
+    }
+
+    .img-item {
+        width: 100%;
+        height: 250px;
+    }
 
     .title-item {
         color: darkslategray;
         font-weight: bold;
     }
+    .text-item {
+        color: black;
+    }
+    a {
+        text-decoration: none !important;
+    }
 }
 
-.img-item {
-    width: 100%;
-    height: 250px;
-}
+
 
 .article-view-container {
     background-color: white;
