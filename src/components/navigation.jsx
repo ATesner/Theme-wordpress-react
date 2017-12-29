@@ -16,16 +16,16 @@ class Navigation extends Component {
             </div>
             <div className="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul className="nav navbar-nav">
-                    <li className="active">
+                    <li id="homeLink" className="active">
                         <Link to="/">Accueil</Link>
                     </li>
-                    <li>
+                    <li id="articleLink">
                         <Link to="/article">Articles</Link>
                     </li>
-                    <li>
+                    <li id="projectLink">
                         <Link to="/project">Projets</Link>
                     </li>
-                    <li>
+                    <li id="contactLink">
                         <Link to="/contact">Contact</Link>
                     </li>
                 </ul>

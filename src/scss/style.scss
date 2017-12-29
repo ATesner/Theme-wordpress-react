@@ -1,12 +1,12 @@
-html {
-    // margin: 0 !important;
-    // padding: 0 !important;
-    // // body, .app-container, header {
-    // //     margin: 0 !important;
-    // //     padding: 0 !important;
+// html {
+//     margin: 0 !important;
+//     padding: 0 !important;
+//     body, .app-container, header {
+//         margin: 0 !important;
+//         padding: 0 !important;
 
-    // // }
-}
+//     }
+// }
 
 .navbar-brand img {
     width: auto;
@@ -51,6 +51,7 @@ html {
 }
 
 .item {
+    cursor: pointer;
     padding: 3px;
     width: calc(33% - 2rem);
     min-width: 325px;
@@ -86,10 +87,4 @@ html {
     a {
         text-decoration: none !important;
     }
-}
-
-
-
-.article-view-container {
-    background-color: white;
 }

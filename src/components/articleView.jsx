@@ -19,12 +19,16 @@ class ArticleView extends Component {
         })
     }
 
+    componentDidMount(){
+        jQuery(".nav li").removeClass("active"); 
+    }
+
     render() {
 
         if(this.state.post != null){
 
             return (
-                <div className="article-view-container">
+                <div className="page-container">
                    <div dangerouslySetInnerHTML={{ __html: this.state.post.content.rendered }} /> 
                 </div>
             );

@@ -32,6 +32,7 @@
   justify-content: space-around; }
 
 .item {
+  cursor: pointer;
   padding: 3px;
   width: calc(33% - 2rem);
   min-width: 325px;
@@ -59,6 +60,3 @@
     color: black; }
   .item a {
     text-decoration: none !important; }
-
-.article-view-container {
-  background-color: white; }

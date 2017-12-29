@@ -21,6 +21,11 @@ class Home extends Component {
         });
     }
 
+    componentDidMount(){
+        jQuery(".nav li").removeClass("active"); 
+        jQuery('#homeLink').addClass('active');
+    }
+
     render() { 
         
         return (
