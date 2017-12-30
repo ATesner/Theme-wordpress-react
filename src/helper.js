@@ -12,6 +12,10 @@ class Http {
         return this.get('/posts')
     }
 
+    getAllCategories() {
+        return this.get('/categories')
+    }
+
     getPostsByCategory(slug) {
 
         return this.getCategoryBySlug(slug).then(category => {

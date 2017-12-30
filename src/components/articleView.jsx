@@ -16,6 +16,7 @@ class ArticleView extends Component {
         http.getPost(this.props.match.params.id).then(post => {
             console.log('ArticleView', post)
             this.setState({ post })
+            jQuery('.article-view-banner').css({'background-image': 'url(' + post.better_featured_image.source_url + ')'});
         })
     }
 
@@ -27,8 +28,15 @@ class ArticleView extends Component {
 
         return (
             <div className="article-view-container">
-                { this.state.post != null ?
-                <div dangerouslySetInnerHTML={{ __html: this.state.post.content.rendered }} /> 
+            { this.state.post != null ? 
+                <div className="article-view-page">
+                <div className="article-view-banner">
+                    <div className="overlay">
+                        <h3>{this.state.post.title.rendered}</h3>
+                    </div>
+                </div>
+                    <div dangerouslySetInnerHTML={{ __html: this.state.post.content.rendered }} /> 
+                </div>
                 :
                 <div>Chargement de l'article</div>
                 }

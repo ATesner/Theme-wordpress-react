@@ -31,7 +31,6 @@ class Home extends Component {
         'https://images.unsplash.com/photo-1488190211105-8b0e65b80b4e?auto=format&fit=crop&w=750&q=80',
         'https://images.unsplash.com/photo-1497030855747-0fc424f89a4b?auto=format&fit=crop&w=750&q=80'];
         let nb = Math.floor(Math.random() * images.length);
-        console.log('NB', nb)
         jQuery('.home-container').css({'background-image': 'url(' + images[nb] + ')'});
     }
 
@@ -42,7 +41,7 @@ class Home extends Component {
     }
 
     render() { 
-        
+
         return (
             <div className="home-container">
                 <div className="home-img">
