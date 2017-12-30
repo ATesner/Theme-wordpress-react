@@ -25,18 +25,15 @@ class ArticleView extends Component {
 
     render() {
 
-        if(this.state.post != null){
-
-            return (
-                <div className="page-container">
-                   <div dangerouslySetInnerHTML={{ __html: this.state.post.content.rendered }} /> 
-                </div>
-            );
-        }else{
-            return (
+        return (
+            <div className="article-view-container">
+                { this.state.post != null ?
+                <div dangerouslySetInnerHTML={{ __html: this.state.post.content.rendered }} /> 
+                :
                 <div>Chargement de l'article</div>
-            )
-        }
+                }
+            </div>
+        );
     }
 }
 
