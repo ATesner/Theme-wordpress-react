@@ -32,11 +32,11 @@ class Home extends Component {
         'https://images.unsplash.com/photo-1497030855747-0fc424f89a4b?auto=format&fit=crop&w=750&q=80'];
         let nb = Math.floor(Math.random() * images.length);
         console.log('NB', nb)
-        $('.home-container').css({'background-image': 'url(' + images[nb] + ')'});
+        jQuery('.home-container').css({'background-image': 'url(' + images[nb] + ')'});
     }
 
     handleScroll() {
-        $('html, body').animate({
+        jQuery('html, body').animate({
             scrollTop: (jQuery("#lastPosts").offset().top - 35)
         }, 700);
     }

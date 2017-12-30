@@ -4,27 +4,53 @@
 
 .home-container {
   margin-top: 0;
-  background-image: url("https://images.pexels.com/photos/78791/railway-bernina-railway-lagalb-bernina-78791.jpeg?w=940&h=650&auto=compress&cs=tinysrgb");
-  background-size: 100% 100vh;
-  background-attachment: fixed; }
+  background-image: url("");
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  text-align: center; }
+
+.home-last-title {
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  color: #656565; }
+
+.glyphicon.glyphicon-chevron-down {
+  font-size: 60px; }
 
 .page-container {
   margin-top: 75px; }
+
+.article-view-container {
+  background-color: whitesmoke;
+  padding: 70px 20px 60px 20px;
+  width: 60%;
+  margin: auto; }
 
 .home-last-article {
   -webkit-box-shadow: 0px -6px 3px 2px rgba(50, 50, 50, 0.3);
   -moz-box-shadow: 0px -6px 3px 2px rgba(50, 50, 50, 0.3);
   box-shadow: 0px -6px 3px 2px rgba(50, 50, 50, 0.3);
   padding-top: 2px;
-  background-color: white; }
+  background-color: #fbfbfb; }
   .home-last-article h1 {
     text-align: center; }
 
-.home-spitch {
+.home-img {
   height: 100vh; }
-  .home-spitch p {
-    text-align: center;
-    vertical-align: middle; }
+  .home-img .home-spitch {
+    cursor: pointer;
+    background-color: #111;
+    opacity: 0.7;
+    border-radius: 15px;
+    color: #fff;
+    padding: 5px;
+    font-size: 25px;
+    letter-spacing: 7px;
+    position: relative;
+    width: 50%;
+    top: 40%;
+    margin: auto; }
 
 .grid {
   display: flex;
