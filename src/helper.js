@@ -45,6 +45,23 @@ class Http {
             })
         })
     }
+
+    postComment(comment){
+        return this.post('/comments', comment)
+    }
+
+    post(url, object){
+        return new Promise((resolve, reject) => {
+            axios.post(this.backUrl + url, object)
+            .then(response => {
+                resolve(response.data)
+            })
+            .catch(error => {
+                console.log('CATCH GET:', url, '\nError:', error)
+                reject(error)
+            })
+        })
+    }
 }
 const http = new Http();
 export default http;

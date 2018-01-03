@@ -10,5 +10,5 @@ function scriptsAndStyles() {
 
 }
 add_action('wp_enqueue_scripts', 'scriptsAndStyles');
-
+add_filter('rest_allow_anonymous_comments', '__return_true');
 ?>
