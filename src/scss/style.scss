@@ -141,3 +141,16 @@
         text-decoration: none !important;
     }
 }
+
+.comment-item {
+    h4 {
+        color: darkslategray;
+    }
+    small {
+        color: gray;
+    }
+}
+
+ul {
+    list-style-type: none !important;
+}

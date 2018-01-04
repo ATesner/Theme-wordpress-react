@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import http from '../helper';
+import CommentForm from './comment-form';
 import Comment from './comment';
 
 class ArticleView extends Component {
@@ -36,8 +37,10 @@ class ArticleView extends Component {
                         <h3>{this.state.post.title.rendered}</h3>
                     </div>
                 </div>
-                    <div dangerouslySetInnerHTML={{ __html: this.state.post.content.rendered }} />
-                    <Comment postId={this.state.post.id}/> 
+                    <div dangerouslySetInnerHTML={{ __html: this.state.post.content.rendered }} /> <hr/>
+                    <h3>Ajouter un commentaire: </h3>
+                    <CommentForm postId={this.state.post.id}/> <br/>
+                    <Comment postId={this.state.post.id} />
                 </div>
                 :
                 <div>Chargement de l'article</div>

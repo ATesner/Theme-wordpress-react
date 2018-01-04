@@ -33,6 +33,14 @@ class Http {
         return this.get('/posts/' + postId)
     }
 
+    getComment(postId, offset, per_page){
+        return this.get('/comments?post='+ postId +'&offset='+ offset +'&per_page=' + per_page)
+    }
+
+    postComment(comment){
+        return this.post('/comments', comment)
+    }
+    
     get(url){
         return new Promise((resolve, reject) => {
             axios.get(this.backUrl + url)
@@ -44,10 +52,6 @@ class Http {
                 reject(error)
             })
         })
-    }
-
-    postComment(comment){
-        return this.post('/comments', comment)
     }
 
     post(url, object){
