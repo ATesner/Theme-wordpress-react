@@ -47,7 +47,7 @@ class Grid extends Component {
                         }
                     })
                 :
-                <div className="loader">Chargement...</div>
+                <div className="loader"></div>
                 }
             </div>
         );

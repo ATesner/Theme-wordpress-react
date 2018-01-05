@@ -43,7 +43,7 @@ class ArticleView extends Component {
                     <Comment postId={this.state.post.id} />
                 </div>
                 :
-                <div>Chargement de l'article</div>
+                <div className="loader"></div>
                 }
             </div>
         );

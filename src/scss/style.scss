@@ -27,10 +27,12 @@
 
 .article-view-container {
     background-color: whitesmoke;
-    padding: 35px 20px 60px 20px;
+    margin-top: 50px;
+    margin-left: auto;
+    margin-right:auto;
+    padding: 1px 20px 20px 20px;
     width: 70%;
     min-width: 325px;
-    margin:auto;
 }
 
 .article-view-banner {
@@ -154,3 +156,30 @@
 ul {
     list-style-type: none !important;
 }
+
+.loader {
+    border: 16px solid #5e5d5d;
+    border-radius: 50%;
+    border-top: 16px solid #3498db;
+    width: 100px;
+    height: 100px;
+    -webkit-animation: spin 2s linear infinite; /* Safari */
+    animation: spin 2s linear infinite;
+    margin: auto;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: relative;
+  }
+  
+  /* Safari */
+  @-webkit-keyframes spin {
+    0% { -webkit-transform: rotate(0deg); }
+    100% { -webkit-transform: rotate(360deg); }
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
