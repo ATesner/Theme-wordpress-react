@@ -10,7 +10,8 @@ class Comment extends Component {
         this.state = {
             offset: 0,
             per_page: 5,
-            comments: []
+            comments: [],
+            commentsLoaded: false
         }
     }
     
@@ -18,7 +19,7 @@ class Comment extends Component {
 
         http.getComment(this.props.postId, this.state.offset, this.state.per_page).then(comments => {
             console.log('Comments', comments)
-            this.setState({ comments })
+            this.setState({ comments, commentsLoaded: true })
         })
     }
 
@@ -26,7 +27,7 @@ class Comment extends Component {
         return (
             <div className="comment-container">
                 {
-                    this.state.comments.length > 0 ?
+                    this.state.commentsLoaded ?
                     <ul className="comment-list list-group">
                         {
                             this.state.comments.map((comment, index) => {

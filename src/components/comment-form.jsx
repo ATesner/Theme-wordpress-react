@@ -37,6 +37,7 @@ class CommentForm extends Component {
             }).then(response =>{
                 console.log('Retour message',response)
                 this.setState({ disabled: '' })
+                jQuery('#comment-form-success').removeClass('hidden');
             })
         }else{
             console.log('form non valide')
@@ -62,10 +63,14 @@ class CommentForm extends Component {
     render() {
         return (
             <form className="form" onSubmit={this.handleSubmit.bind(this)}>
-                <label>Nom :</label>
+            <div className="alert alert-success alert-dismissable hidden" id="comment-form-success">
+                <a href="#" className="close" data-dismiss="alert" aria-label="close">&times;</a>
+                <strong>Commentaire envoyé !</strong> Il sera visible après avoir été approuvé.
+            </div>
+                <label>Nom* :</label>
                 <input type="text" name="author_name" maxLength="25" className="form-control" 
                     value={this.state.name} onChange={this.handleNameChange.bind(this)} required/>
-                <label>Message:</label>
+                <label>Message* :</label>
                 <textarea type="text" name="content" maxLength="500" className="form-control"
                     value={this.state.message} onChange={this.handleMessageChange.bind(this)} required></textarea>
                 <br/>
