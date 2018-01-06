@@ -26,18 +26,24 @@ class ArticleView extends Component {
         jQuery(".nav li").removeClass("active"); 
     }
 
+    componentDidUpdate() {
+        Prism.highlightAll();
+    }
+
     render() {
 
         return (
             <div className="article-view-container">
             { this.state.post != null ? 
                 <div className="article-view-page">
-                <div className="article-view-banner">
-                    <div className="overlay">
-                        <h3>{this.state.post.title.rendered}</h3>
+                    <div className="article-view-banner">
+                        <div className="overlay">
+                            <h3>{this.state.post.title.rendered}</h3>
+                        </div>
                     </div>
-                </div>
-                    <div dangerouslySetInnerHTML={{ __html: this.state.post.content.rendered }} /> <hr/>
+                    <br/>
+                    <div className="article-view-content" dangerouslySetInnerHTML={{ __html: this.state.post.content.rendered }} /> 
+                    <hr/>
                     <h3>Ajouter un commentaire: </h3>
                     <CommentForm postId={this.state.post.id}/> <br/>
                     <Comment postId={this.state.post.id} />

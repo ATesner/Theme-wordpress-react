@@ -36,7 +36,7 @@
 }
 
 .article-view-banner {
-    height: 100px;
+    height: 120px;
     background-size: 100% 100vh;
     background-attachment: scroll;
     background-position: center;
@@ -54,6 +54,10 @@
             font-weight: bold;
         }
     }
+}
+
+p {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif !important;
 }
 
 .home-last-article {
@@ -166,11 +170,11 @@ ul {
     -webkit-animation: spin 2s linear infinite; /* Safari */
     animation: spin 2s linear infinite;
     margin: auto;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  position: relative;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: relative;
   }
   
   /* Safari */
