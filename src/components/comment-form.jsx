@@ -63,7 +63,7 @@ class CommentForm extends Component {
 
     render() {
         return (
-            <form className="form" onSubmit={this.handleSubmit.bind(this)}>
+            <form className="form comment-form-container" onSubmit={this.handleSubmit.bind(this)}>
             <div className="alert alert-success alert-dismissable hidden" id="comment-form-success">
                 <a href="#" className="close" data-dismiss="alert" aria-label="close">&times;</a>
                 <strong>Commentaire envoyé !</strong> Il sera visible après avoir été approuvé.

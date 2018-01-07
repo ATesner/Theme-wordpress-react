@@ -159,6 +159,14 @@ a {
     }
 }
 
+.comment-form-container {
+
+    textarea {
+        overflow-x: hidden !important;
+        height: 200px;
+    }
+}
+
 .answer-item {
     background-color: lightblue;
 }
