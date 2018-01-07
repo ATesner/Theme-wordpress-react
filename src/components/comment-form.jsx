@@ -28,17 +28,18 @@ class CommentForm extends Component {
         e.preventDefault();
         
         if(this.formValid()){
-            this.resetRecaptcha();
-            this.setState({ disabled: 'disabled', name: '', message: '' })
-            http.postComment({ 
-                author_name: this.state.name,
-                content: this.state.message,
-                post: this.props.postId
+           this.resetRecaptcha();
+           http.postComment({ 
+               author_name: this.state.name,
+               content: this.state.message,
+               post: this.props.postId,
+               parent: this.props.parent
             }).then(response =>{
                 console.log('Retour message',response)
                 this.setState({ disabled: '' })
                 jQuery('#comment-form-success').removeClass('hidden');
             })
+            this.setState({ disabled: 'disabled', name: '', message: '' })
         }else{
             console.log('form non valide')
         }

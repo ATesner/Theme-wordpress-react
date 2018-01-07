@@ -45,7 +45,8 @@ class ArticleView extends Component {
                     <div className="article-view-content" dangerouslySetInnerHTML={{ __html: this.state.post.content.rendered }} /> 
                     <hr/>
                     <h3>Ajouter un commentaire: </h3>
-                    <CommentForm postId={this.state.post.id}/> <br/>
+                    {/* Si modal != 0 mettre le form dans une modal avec le parent sinon laisser le form tel quelle avec parent 0 */}
+                    <CommentForm postId={this.state.post.id} parent={ 0 }/> <br/>
                     <Comment postId={this.state.post.id} />
                 </div>
                 :

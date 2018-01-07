@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import http from '../helper';
 import Moment from 'moment';
+import Answer from './answer';
 
 class Comment extends Component {
 
@@ -11,7 +12,8 @@ class Comment extends Component {
             offset: 0,
             per_page: 5,
             comments: [],
-            commentsLoaded: false,
+            answers: [],
+            //commentsLoaded: false,
             loadingComments: false
         }
 
@@ -28,13 +30,21 @@ class Comment extends Component {
     }
     loadComments() {
 
-        http.getComment(this.props.postId, this.state.offset, this.state.per_page).then(newComments => {
+        http.getComment(this.props.postId, this.state.offset, this.state.per_page, 0).then(newComments => {
+            let commentsId = []
+            newComments.forEach((comment, index) => {
+                commentsId.push(comment.id)
+            })
+            http.getAnswer(commentsId).then(newAnswers => {
+                console.log('Comments', newComments, newAnswers, newComments.find(answer => answer.parent == 0))
 
-            this.setState({ 
-                comments: this.state.comments.concat(newComments), 
-                commentsLoaded: true,
-                offset: this.state.offset + this.state.per_page,
-                loadingComments: false
+                this.setState({ 
+                    comments: this.state.comments.concat(newComments), 
+                    answers: this.state.answers.concat(newAnswers),
+                   // commentsLoaded: true,
+                    offset: this.state.offset + this.state.per_page,
+                    loadingComments: false
+                })
             })
             if(newComments.length < this.state.per_page){
                 window.removeEventListener('scroll', this.scrollFunction);
@@ -63,6 +73,7 @@ class Comment extends Component {
                                         </small>
                                         <h4>{comment.author_name}</h4>
                                         <div dangerouslySetInnerHTML={{ __html: comment.content.rendered }} />
+                                        <Answer answers={this.state.answers} parent={comment.id} />
                                     </li>
                                 )
                             })

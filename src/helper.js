@@ -33,8 +33,12 @@ class Http {
         return this.get('/posts/' + postId)
     }
 
-    getComment(postId, offset, per_page){
-        return this.get('/comments?post='+ postId +'&offset='+ offset +'&per_page=' + per_page)
+    getComment(postId, offset, per_page, parent){
+        return this.get('/comments?post='+ postId +'&offset='+ offset +'&per_page=' + per_page + '&parent=' + parent)
+    }
+
+    getAnswer(parentsId){
+        return this.get('/comments?parent=' + parentsId.join(',') + '&order=asc')
     }
 
     postComment(comment){
