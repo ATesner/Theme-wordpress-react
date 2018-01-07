@@ -38,7 +38,11 @@ class Http {
     }
 
     getAnswer(parentsId){
-        return this.get('/comments?parent=' + parentsId.join(',') + '&order=asc')
+        return (parentsId.length > 0 ? 
+            this.get('/comments?parent=' + parentsId.join(',') + '&order=asc')
+            : 
+            new Promise((resolve, reject) => { resolve([]) })
+        )
     }
 
     postComment(comment){

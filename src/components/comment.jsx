@@ -36,7 +36,7 @@ class Comment extends Component {
                 commentsId.push(comment.id)
             })
             http.getAnswer(commentsId).then(newAnswers => {
-                console.log('Comments', newComments, newAnswers, newComments.find(answer => answer.parent == 0))
+                console.log('Comments', newComments, newAnswers)
 
                 this.setState({ 
                     comments: this.state.comments.concat(newComments), 
