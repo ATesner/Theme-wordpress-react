@@ -5,11 +5,11 @@
 
 .home-container {
     margin-top: 0;
-    background-image: url('');
+    background: url('') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
     background-size: cover;
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
     text-align: center;
 }
 
@@ -19,6 +19,20 @@
 }
 .glyphicon.glyphicon-chevron-down {
     font-size: 60px;
+}
+
+.carousel {  
+    margin: auto;  
+    width: 50%;
+
+    .carousel-control {
+        background-image: none !important;
+        color: black;
+        opacity: .7;
+    }
+    .img-responsive {
+        width: 100%;
+    }
 }
 
 .page-container {
@@ -36,9 +50,9 @@
 }
 
 .article-view-banner {
-    height: 120px;
+    height: 150px;
     background-size: 100% 100vh;
-    background-attachment: scroll;
+    background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     .overlay {
@@ -50,7 +64,7 @@
         text-align: center;
         h3 {
             position: relative;
-            top: 35%;
+            top: 40%;
             font-weight: bold;
         }
     }
@@ -96,10 +110,10 @@ p {
     justify-content: space-around;
 }
 
-.item {
+.grid-item {
     cursor: pointer;
     padding: 3px;
-    width: calc(33% - 5rem);
+    width: calc(33% - 8rem);
     min-width: 325px;
     margin-bottom: 2rem;
     -moz-box-shadow: 1px 1px 1px 2px #656565;
@@ -120,7 +134,7 @@ p {
 
     .img-item {
         width: 100%;
-        height: 240px;
+        height: 60%;
         border: 1px solid #111;
     }
     
@@ -163,12 +177,12 @@ a {
 
     textarea {
         overflow-x: hidden !important;
-        height: 200px;
+        height: 200px !important;
     }
 }
 
 .answer-item {
-    background-color: lightblue;
+    background-color: lightblue !important;
 }
 
 ul {
