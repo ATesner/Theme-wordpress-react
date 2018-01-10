@@ -73,7 +73,8 @@ class Comment extends Component {
                                         </small>
                                         <h4>{comment.author_name}</h4>
                                         <div dangerouslySetInnerHTML={{ __html: comment.content.rendered }} />
-                                        <Answer answers={this.state.answers} parent={comment.id} />
+                                        <Answer answers={this.state.answers} commentParentId={comment.id} 
+                                            showHideModal={this.props.showHideModal} />
                                     </li>
                                 )
                             })

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import http from '../helper';
 import CommentForm from './comment-form';
 import Comment from './comment';
+import MyModal from './my-modal';
 
 class ArticleView extends Component {
 
@@ -9,8 +10,10 @@ class ArticleView extends Component {
         super(props);
         
         this.state =  {
-            post: null
+            post: null,
+            commentId: 0
         }
+        this.showHideModal = this.showHideModal.bind(this);
     }
     
     componentWillMount() {
@@ -30,6 +33,15 @@ class ArticleView extends Component {
         Prism.highlightAll();
     }
 
+    showHideModal(id) {
+        this.setState({ commentId: id }, () => { 
+            this.state.commentId == 0 ?
+            jQuery('#myModal').modal('hide')
+            :
+            jQuery('#myModal').modal('show') 
+        })
+    }
+
     render() {
 
         return (
@@ -45,9 +57,15 @@ class ArticleView extends Component {
                     <div className="article-view-content" dangerouslySetInnerHTML={{ __html: this.state.post.content.rendered }} /> 
                     <hr/>
                     <h3>Ajouter un commentaire: </h3>
-                    {/* Si modal != 0 mettre le form dans une modal avec le parent sinon laisser le form tel quelle avec parent 0 */}
-                    <CommentForm postId={this.state.post.id} parent={ 0 }/> <br/>
-                    <Comment postId={this.state.post.id} />
+                    { this.state.commentId == 0 ?
+                        <CommentForm postId={this.state.post.id} parent={ 0 }/>
+                    :
+                        <MyModal showHideModal={this.showHideModal} title='Répondre'>
+                             <CommentForm postId={this.state.post.id} parent={ this.state.commentId }/>
+                        </MyModal>
+                    }
+                    <br/>
+                    <Comment postId={this.state.post.id} showHideModal={this.showHideModal}/>
                 </div>
                 :
                 <div className="loader"></div>
