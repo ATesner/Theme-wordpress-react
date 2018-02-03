@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 import http from '../helper';
 import ReCAPTCHA from 'react-recaptcha';
 
-var recaptchaInstance;
-
 class CommentForm extends Component {
 
     constructor(props) {

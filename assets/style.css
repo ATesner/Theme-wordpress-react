@@ -138,7 +138,12 @@ a {
 .comment-item small {
   color: gray; }
 
-.comment-form-container textarea {
+.contact-container {
+  width: 90%;
+  margin-right: auto;
+  margin-left: auto; }
+
+textarea {
   overflow-x: hidden !important;
   height: 200px !important; }
 

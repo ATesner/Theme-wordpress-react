@@ -49,6 +49,19 @@ class Http {
         return this.post('/comments', comment)
     }
     
+    sendMessage(object) {
+        return new Promise((resolve, reject) => {
+            axios.post('http://antoinetesner.fr/wp-json/custom-endpoint/v1/contact', object)
+            .then(response => {
+                resolve(response.data)
+            })
+            .catch(error => {
+                console.log('CATCH POST sendMessage:', url, '\nError:', error)
+                reject(error)
+            })
+        })
+    }
+
     get(url){
         return new Promise((resolve, reject) => {
             axios.get(this.backUrl + url)

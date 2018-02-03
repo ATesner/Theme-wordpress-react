@@ -173,12 +173,16 @@ a {
     }
 }
 
-.comment-form-container {
+.contact-container {
 
-    textarea {
-        overflow-x: hidden !important;
-        height: 200px !important;
-    }
+    width: 90%;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+textarea {
+    overflow-x: hidden !important;
+    height: 200px !important;
 }
 
 .answer-item {
