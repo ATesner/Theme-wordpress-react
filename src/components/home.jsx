@@ -25,11 +25,8 @@ class Home extends Component {
         jQuery(".nav li").removeClass("active"); 
         jQuery('#homeLink').addClass('active');
 
-        var images = [
-        'https://images.unsplash.com/photo-1448906654166-444d494666b3?auto=format&fit=crop&w=1500&q=80', 
-        'https://images.unsplash.com/photo-1507139831800-3285c47534dd?auto=format&fit=crop&w=952&q=80',
-        'https://images.unsplash.com/photo-1488190211105-8b0e65b80b4e?auto=format&fit=crop&w=750&q=80',
-        'https://images.unsplash.com/photo-1497030855747-0fc424f89a4b?auto=format&fit=crop&w=750&q=80'];
+        var images = [ 'http://antoinetesner.fr/wp-content/uploads/2018/02/dublin-2507902_1920.jpg',
+                    'http://antoinetesner.fr/wp-content/uploads/2018/02/paper-3139127_1920.jpg'];
         let nb = Math.floor(Math.random() * images.length);
         jQuery('.home-container').css({'background-image': 'url(' + images[nb] + ')'});
     }
