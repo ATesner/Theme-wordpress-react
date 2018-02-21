@@ -29,8 +29,8 @@ class Http {
         return this.get( '/categories?slug=' + slug)
     }
 
-    getPost(postId) {
-        return this.get('/posts/' + postId)
+    getPost(slug) {
+        return this.get('/posts?slug=' + slug)
     }
 
     getComment(postId, offset, per_page, parent){

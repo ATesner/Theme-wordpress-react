@@ -18,10 +18,10 @@ class ArticleView extends Component {
     
     componentWillMount() {
 
-        http.getPost(this.props.match.params.id).then(post => {
+        http.getPost(this.props.match.params.slug).then(post => {
             console.log('ArticleView', post)
-            this.setState({ post })
-            jQuery('.article-view-banner').css({'background-image': 'url(' + post.better_featured_image.source_url + ')'});
+            this.setState({ post: post[0] })
+            jQuery('.article-view-banner').css({'background-image': 'url(' + post[0].better_featured_image.source_url + ')'});
         })
     }
 

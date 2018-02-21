@@ -19,8 +19,8 @@ class Grid extends Component {
         })
     }
 
-    handleItemClick(postId) {
-        window.location = '#/article/'+ postId;
+    handleItemClick(slug) {
+        window.location = '#/'+ slug;
     }
 
     render() {
@@ -30,7 +30,7 @@ class Grid extends Component {
                     this.props.posts.map((post, index) => {
                         if(!post.content.protected) {
                             return (        
-                                <div key={index} className="grid-item" onClick={this.handleItemClick.bind(this, post.id)} > 
+                                <div key={index} className="grid-item" onClick={this.handleItemClick.bind(this, post.slug)} > 
                                     { post.better_featured_image ? 
                                         <img className="img-item" src={post.better_featured_image.source_url} /> : null
                                     }
