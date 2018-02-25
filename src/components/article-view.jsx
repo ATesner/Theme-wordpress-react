@@ -26,11 +26,12 @@ class ArticleView extends Component {
     }
 
     componentDidMount(){
-        jQuery(".nav li").removeClass("active"); 
+        jQuery(".nav li").removeClass("active");      
     }
 
     componentDidUpdate() {
         Prism.highlightAll();
+        this.state.post && jQuery("title").text(this.state.post.title.rendered);
     }
 
     showHideModal(id) {
