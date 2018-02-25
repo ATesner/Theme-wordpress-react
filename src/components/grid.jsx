@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import http from '../helper';
 import Moment from 'moment';
+import { Link } from 'react-router-dom'
 
 class Grid extends Component {
 
@@ -19,18 +20,15 @@ class Grid extends Component {
         })
     }
 
-    handleItemClick(slug) {
-        window.location = '#/'+ slug;
-    }
-
     render() {
         return (
             <div className="grid">
                 { this.props.posts.length > 0 && this.state.categories.length > 0 ?
                     this.props.posts.map((post, index) => {
                         if(!post.content.protected) {
-                            return (        
-                                <div key={index} className="grid-item" onClick={this.handleItemClick.bind(this, post.slug)} > 
+                            return (   
+                                <div key={index} className="grid-item" > 
+                                <Link to={'/'+post.slug}>     
                                     { post.better_featured_image ? 
                                         <img className="img-item" src={post.better_featured_image.source_url} /> : null
                                     }
@@ -42,6 +40,7 @@ class Grid extends Component {
                                         <span className="date-item"> publié le { Moment(post.date).format('DD-MM-YYYY') }</span>
                                     </div>
                                     <div className="text-item" dangerouslySetInnerHTML={{ __html: post.excerpt.rendered }} /> 
+                                </Link>
                                 </div>
                             )
                         }

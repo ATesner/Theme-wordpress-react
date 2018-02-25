@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import { HashRouter, Route, Switch, Redirect } from 'react-router-dom'
+import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom'
 import { AppContainer } from 'react-hot-loader'
 import Navigation from './components/navigation'
 import Home from './components/home'
@@ -9,13 +9,12 @@ import articleView from './components/article-view'
 import Project from './components/project'
 import Contact from './components/contact'
 import './scss/style.scss'
-//https://stanko.github.io/webpack-babel-react-revisited/
-//https://medium.com/@srinisoundar/setting-up-environment-for-react-sass-es2015-babel-with-webpack-2f77445129
+
 const renderApp = () => {
 
     ReactDOM.render(
         <AppContainer>
-            <HashRouter>
+            <BrowserRouter>
                 <div className="app-container">
                     <header>
                         <Navigation />
@@ -31,7 +30,7 @@ const renderApp = () => {
                         </Switch>
                     </main>
                 </div>
-            </HashRouter>
+            </BrowserRouter>
         </AppContainer>,
         document.getElementById('app')
     )
