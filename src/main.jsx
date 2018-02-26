@@ -22,10 +22,10 @@ const renderApp = () => {
                     <main>
                         <Switch>
                             <Route path="/" component={ Home } exact />
-                            <Route path="/project" component={ Project } />
+                            <Route path="/project" component={ Project } exact />
                             <Route path="/article" component={ Article } exact />
+                            <Route path="/contact" component={ Contact } exact />
                             <Route path="/:slug" component={ articleView } />
-                            <Route path="/contact" component={ Contact } />
                             <Route render={ () => { return <Redirect to="/" /> }} />
                         </Switch>
                     </main>

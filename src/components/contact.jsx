@@ -73,7 +73,7 @@ class Contact extends Component {
                     <a href="#" className="close" data-dismiss="alert" aria-label="close">&times;</a>
                     <strong>Message envoyé !</strong>
                 </div>
-                <label>Nom* :</label>
+                <label>Email* :</label>
                 <input type="text" name="author_name" maxLength="25" className="form-control" 
                     value={this.state.name} onChange={this.handleNameChange.bind(this)} required/>
                 <label>Message* :</label>
