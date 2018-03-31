@@ -49,6 +49,13 @@
     min-width: 325px;
 }
 
+.article-view-content {
+    img {
+        width: 80%;
+        height: auto;
+    }
+}
+
 .article-view-banner {
     height: 150px;
     background-size: 100% 100vh;
