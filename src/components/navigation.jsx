@@ -12,7 +12,7 @@ class Navigation extends Component {
                 <span className="icon-bar"></span>
                 <span className="icon-bar"></span>
             </button>
-            <a className="navbar-brand" href="#"><img src="http://antoinetesner.fr/wp-content/uploads/2017/12/Logo_blog.png" /></a>
+            <a className="navbar-brand" href="/"><img src="http://antoinetesner.fr/wp-content/uploads/2018/03/logo_bibliotech.png" /></a>
             </div>
             <div className="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul className="nav navbar-nav">

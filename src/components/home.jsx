@@ -33,7 +33,7 @@ class Home extends Component {
 
     handleScroll() {
         jQuery('html, body').animate({
-            scrollTop: (jQuery("#lastPosts").offset().top - 35)
+            scrollTop: (jQuery("#lastPosts").offset().top - 55)
         }, 700);
     }
 

@@ -28,6 +28,8 @@ class Article extends Component {
     render() {
         return (
             <div className="page-container">
+                <h1 className="page-title"> {this.state.articles.length} Articles</h1>
+                <br/>
                 <Grid posts={this.state.articles} />
             </div>
         );
