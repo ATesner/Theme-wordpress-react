@@ -149,6 +149,7 @@ p {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
+    min-height: 400px;
 }
 
 .grid-item {
@@ -232,6 +233,20 @@ textarea {
 
 ul {
     list-style-type: none !important;
+}
+
+.footer {
+    background-color: #222222;
+    padding: 15px;
+    margin-top: 40px;
+    border-top: #111 solid 2px;
+    .footer-element {
+        text-align-last: center;
+        .footer-icon {
+            width: 55px;
+            height: auto;
+        }
+    }
 }
 
 .loader {

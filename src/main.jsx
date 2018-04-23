@@ -29,6 +29,23 @@ const renderApp = () => {
                             <Route render={ () => { return <Redirect to="/" /> }} />
                         </Switch>
                     </main>
+                    
+                <div className="col-sm-12 footer">
+                    <div className="col-sm-4 footer-element">
+                        <a href="https://www.linkedin.com/in/antoine-tesner-6a42a511a/" target="_blank">
+                            <img className="footer-icon "src="https://cdn2.iconfinder.com/data/icons/zeshio-s-social-media/200/Social_Media_Icons_Edged_Highlight-15-128.png" alt="linkedIn" title="LinkedIn"/>
+                        </a>
+                    </div>
+                    <div className="col-sm-4 footer-element">
+                        <a href="https://github.com/ATesner" target="_blank">
+                            <img className="footer-icon "src="https://cdn4.iconfinder.com/data/icons/social-media-2070/140/_github-128.png" alt="github" title="Github"/>
+                        </a></div>
+                    <div className="col-sm-4 footer-element">
+                        <a href="https://www.instagram.com/ttoinee/" target="_blank">
+                        <img  className="footer-icon" src="https://cdn3.iconfinder.com/data/icons/erlen-s-social-media-icon-set/128/icon_instagram_128.png" alt="instagram" title="Instagram"/>
+                        </a>
+                    </div>
+                </div>
                 </div>
             </BrowserRouter>
         </AppContainer>,
