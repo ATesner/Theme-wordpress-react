@@ -7,9 +7,9 @@ class Http {
         this.backUrl = 'http://antoinetesner.fr/wp-json/wp/v2'
     }
 
-    getAllPosts() {
+    getLastPosts() {
 
-        return this.get('/posts')
+        return this.get('/posts?per_page=6')
     }
 
     getAllCategories() {

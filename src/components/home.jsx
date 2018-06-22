@@ -15,9 +15,9 @@ class Home extends Component {
     
     componentWillMount() {
       
-        http.getAllPosts().then((posts) => {
+        http.getLastPosts().then((posts) => {
             this.setState({ lastPosts: posts })
-            console.log('Posts Home', posts)
+            //console.log('Posts Home', posts)
         });
     }
 
@@ -25,8 +25,7 @@ class Home extends Component {
         jQuery(".nav li").removeClass("active"); 
         jQuery('#homeLink').addClass('active');
 
-        var images = [ 'http://antoinetesner.fr/wp-content/uploads/2018/02/dublin-2507902_1920.jpg',
-                    'http://antoinetesner.fr/wp-content/uploads/2018/02/paper-3139127_1920.jpg'];
+        var images = [ 'http://antoinetesner.fr/wp-content/uploads/2018/06/bibliotech_banner.jpg'];
         let nb = Math.floor(Math.random() * images.length);
         jQuery('.home-container').css({'background-image': 'url(' + images[nb] + ')'});
     }
