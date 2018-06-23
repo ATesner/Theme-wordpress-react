@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import http from '../helper';
 import Grid from './grid';
-import axios from 'axios';
+import { Link } from 'react-router-dom'
 
 class Home extends Component {
 
@@ -34,7 +34,7 @@ class Home extends Component {
         jQuery('html, body').animate({
             scrollTop: (jQuery("#lastPosts").offset().top - 55)
         }, 700);
-    }
+    } 
 
     render() { 
 
@@ -51,6 +51,20 @@ class Home extends Component {
                     <h1 className="home-last-title">Dernieres publications</h1>
                     <br/>
                     <Grid posts={this.state.lastPosts} />
+                    <span className="next-icon glyphicon glyphicon-option-horizontal" aria-hidden="true"></span>
+                    <div className="home-options">               
+                        <Link to="/article">
+                            <button className="btn btn-secondary btn-lg">
+                                <i className="fas fa-book"></i> Voir les articles
+                            </button>
+                        </Link>
+                        
+                        <Link to="/project">
+                            <button className="btn btn-secondary btn-lg">
+                            <i className="glyphicon glyphicon-wrench"></i> Voir les projets
+                            </button>
+                        </Link>
+                    </div>
                 </div>
             </div>
         );

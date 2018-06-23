@@ -4,6 +4,7 @@ add_theme_support( 'post-thumbnails' );
 function scriptsAndStyles() {
     wp_enqueue_style('mytheme-style', get_theme_file_uri("style.css"));
     wp_enqueue_style('bootstrap-style', "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css");
+    wp_enqueue_style('font-awesome-style', "https://use.fontawesome.com/releases/v5.1.0/css/all.css");
     wp_enqueue_style('prism-style', get_theme_file_uri('prism.css'));
     wp_enqueue_script('jquery', "https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.js");
     wp_enqueue_script('bootstrap-js', "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js");

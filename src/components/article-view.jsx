@@ -3,6 +3,8 @@ import http from '../helper';
 import CommentForm from './comment-form';
 import Comment from './comment';
 import MyModal from './my-modal';
+import Moment from 'moment';
+import { Link } from 'react-router-dom';
 
 class ArticleView extends Component {
 
@@ -11,7 +13,8 @@ class ArticleView extends Component {
         
         this.state =  {
             post: null,
-            commentId: 0
+            commentId: 0,
+            retourLink: 'article'
         }
         this.showHideModal = this.showHideModal.bind(this);
     }
@@ -20,7 +23,7 @@ class ArticleView extends Component {
 
         http.getPost(this.props.match.params.slug).then(post => {
             console.log('ArticleView', post)
-            this.setState({ post: post[0] })
+            this.setState({ post: post[0], retourLink: post[0].categories[0] == 7 ? 'article' : 'project' })
             jQuery('.article-view-banner').css({'background-image': 'url(' + post[0].better_featured_image.source_url + ')'});
         })
     }
@@ -54,7 +57,12 @@ class ArticleView extends Component {
                             <h3>{this.state.post.title.rendered}</h3>
                         </div>
                     </div>
-                    <br/>
+                    <Link className="retour-link" to={this.state.retourLink}>
+                        <span className="glyphicon glyphicon-chevron-left" aria-hidden="true"></span> 
+                        Retour aux { this.state.retourLink == 'project' ? 'projets' : 'articles'}
+                    </Link>
+                    <span className="date-app pull-right"> publié le { Moment(this.state.post.date).format('DD-MM-YYYY') }</span>
+                    <br/><br/>
                     <div className="article-view-content" dangerouslySetInnerHTML={{ __html: this.state.post.content.rendered }} /> 
                     <hr/>
                     <h3>Ajouter un commentaire: </h3>

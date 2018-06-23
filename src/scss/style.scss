@@ -1,6 +1,8 @@
+$color-black: #222222;
+$color-blue: #003366;
 
 .navbar {
-
+    border-bottom: #111 solid 2px;
     .navbar-brand {
         z-index: 1;
         padding: 0;
@@ -66,7 +68,7 @@
         width: 50%;
         margin: auto;
         padding: 3px 0px 3px 0px;
-        background-color:#003366;
+        background-color: $color-blue;
         color: white;
         font-size: 5rem;
         font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
@@ -81,6 +83,21 @@
     padding: 1px 20px 20px 20px;
     width: 70%;
     min-width: 325px;
+    
+    .date-app {
+        color: rgb(143, 143, 143);
+        font-style: italic;
+    }
+
+    .retour-link {
+        color: $color-black;
+        font-style: italic;
+        font-weight: bold
+    }
+
+    .loader {
+        margin-top: 20px;
+    }
 }
 
 .article-view-content {
@@ -123,6 +140,26 @@ p {
     background-color: rgb(251, 251, 251);
     h1 {
         text-align: center;
+    }
+    a {
+        color: white;
+    }
+    button {
+        background-color: $color-blue;
+
+        &:hover {
+            color: white;
+            background-color: $color-black;
+        }
+    }
+    .next-icon {
+        font-size: 4rem;
+    }
+}
+
+.home-options {
+    a {
+        margin : 10px;
     }
 }
 
@@ -176,7 +213,7 @@ p {
 
     .img-item {
         width: 100%;
-        height: 60%;
+        height: 225px;
         border: 1px solid #111;
     }
     
@@ -236,7 +273,7 @@ ul {
 }
 
 .footer {
-    background-color: #222222;
+    background-color: $color-black;
     padding: 15px;
     margin-top: 40px;
     border-top: #111 solid 2px;
