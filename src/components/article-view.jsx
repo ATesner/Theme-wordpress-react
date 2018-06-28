@@ -57,12 +57,12 @@ class ArticleView extends Component {
                             <h3>{this.state.post.title.rendered}</h3>
                         </div>
                     </div>
-                    <Link className="retour-link" to={this.state.retourLink}>
+                    <Link className="retour-link" to={'/'+this.state.retourLink}>
                         <span className="glyphicon glyphicon-chevron-left" aria-hidden="true"></span> 
                         Retour aux { this.state.retourLink == 'project' ? 'projets' : 'articles'}
                     </Link>
                     <span className="date-app pull-right"> publié le { Moment(this.state.post.date).format('DD-MM-YYYY') }</span>
-                    <br/><br/>
+                    <br/>
                     <div className="article-view-content" dangerouslySetInnerHTML={{ __html: this.state.post.content.rendered }} /> 
                     <hr/>
                     <h3>Ajouter un commentaire: </h3>

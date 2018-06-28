@@ -42,7 +42,7 @@ class Home extends Component {
             <div className="home-container">
                 <div className="home-img">
                     <div className="home-spitch" onClick={this.handleScroll.bind(this)}>
-                        <p>Apprenez de nouvelles choses</p>
+                        <p>Commencer à apprendre</p>
                         <span className="glyphicon glyphicon-chevron-down"></span>
                     </div>
                 </div>

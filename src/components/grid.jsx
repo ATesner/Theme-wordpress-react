@@ -34,7 +34,7 @@ class Grid extends Component {
                                     }
                                     <h4 className="title-item" >{ post.title.rendered }</h4>
                                     <div className="infos-item">
-                                        <span className="cat-item">
+                                        <span className={ post.categories[0] == 7 ? 'article-item' : 'project-item' }>
                                             {this.state.categories.find(cat => cat.id == post.categories[0]).name }
                                         </span>
                                         <span className="date-item"> publié le { Moment(post.date).format('DD-MM-YYYY') }</span>

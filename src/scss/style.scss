@@ -1,5 +1,6 @@
 $color-black: #222222;
 $color-blue: #003366;
+$color-light-grey: #656565;
 
 .navbar {
     border-bottom: #111 solid 2px;
@@ -85,7 +86,8 @@ $color-blue: #003366;
     min-width: 325px;
     
     .date-app {
-        color: rgb(143, 143, 143);
+        color: $color-black;
+        font-weight: bold;
         font-style: italic;
     }
 
@@ -101,6 +103,16 @@ $color-blue: #003366;
 }
 
 .article-view-content {
+
+    h1 {
+        color: $color-light-grey;
+        font-weight: bold;
+        font-style: italic;
+    }
+    h2 {
+        color: $color-blue;
+        font-weight: bold;
+    }
     img {
         width: 80%;
         height: auto;
@@ -194,6 +206,7 @@ p {
     padding: 3px;
     width: calc(33% - 8rem);
     min-width: 325px;
+    max-width: 380px;
     margin: 2rem;
     -moz-box-shadow: 1px 1px 1px 2px #656565;
     -webkit-box-shadow: 1px 1px 1px 2px #656565;
@@ -220,8 +233,12 @@ p {
     .infos-item {
         font-style: italic;
         margin-bottom: 10px;
-        .cat-item {
+        .article-item {
             color: green;
+            font-weight: bold;
+        }
+        .project-item {
+            color: $color-blue;
             font-weight: bold;
         }
         .date-item {
